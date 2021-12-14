@@ -1,28 +1,28 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/config');
 
-const Customer = sequelize.define('customer', {
+const Client = sequelize.define('client', {
   id: {
     type: DataTypes.INTEGER,
-    autoIncrement: true,
-    allowNull: false,
     primaryKey: true,
+    allowNull: false
   },
   name: {
     type: DataTypes.STRING,
     allowNull: false,
+    unique: true
   },
   email: {
     type: DataTypes.STRING,
     allowNull: false,
+    unique: true
   }
 },
   {
     timestamps: true,
     createdAt: 'created_at',
     updatedAt: false
-  }
-);
+  });
 
-Customer.sync({ false: true }).then(() => console.log('Customer model synced'));
-module.exports = Customer;
+Client.sync().then(() => console.log('Client model synced'));
+module.exports = Client;
