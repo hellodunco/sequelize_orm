@@ -20,5 +20,4 @@ const Order = sequelize.define('order', {
 
 });
 
-Order.sync({ force: true }).then(() => console.log('Order model synced'));
 module.exports = Order;

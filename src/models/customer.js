@@ -24,5 +24,4 @@ const Customer = sequelize.define('customer', {
   }
 );
 
-Customer.sync({ false: true }).then(() => console.log('Customer model synced'));
 module.exports = Customer;
